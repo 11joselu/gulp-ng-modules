@@ -8,4 +8,4 @@ cache:
 before_script:
   - 'npm i' # install npm packages
 after_script:
-  - 'npm t' # run tests
+  - 'npm test' # run tests
