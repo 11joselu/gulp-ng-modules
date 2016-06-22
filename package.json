@@ -1,0 +1,33 @@
+{
+  "name": "gulp-ng-modules",
+  "version": "0.0.10",
+  "description": "Will search for the angular.module definition and inject dependencies based on configuration",
+  "main": "injex.js",
+  "directories": {
+    "test": "spec"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/11joselu/gulp-ng-modules.git"
+  },
+  "keywords": [
+    "Gulp",
+    "Angular",
+    "Injection"
+  ],
+  "author": "Jose Cabrera <contact@josecabrera.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/11joselu/gulp-ng-modules/issues"
+  },
+  "homepage": "https://github.com/11joselu/gulp-ng-modules#readme",
+  "dependencies": {
+    "array-unique": "^0.2.1",
+    "gulp-util": "^3.0.7",
+    "strip-comments": "^0.4.4",
+    "through2": "^2.0.1"
+  }
+}
