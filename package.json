@@ -7,7 +7,7 @@
     "test": "spec"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha spec/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,9 @@
     "gulp-util": "^3.0.7",
     "strip-comments": "^0.4.4",
     "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   }
 }

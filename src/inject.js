@@ -2,18 +2,13 @@
 
 var fs            = require('fs');
 var through       = require('through2');
-var gutil         = require('gulp-util');
 var stripComments = require('strip-comments');
 var path          = require('path');
 var utils         = require('./utils');
 
-var File          = gutil.File;
-var PluginError   = gutil.PluginError;
-
-
 module.exports = function (options) {
 
-  if (!options || !options.name) throw new PluginError('Modules error', 'Missing application name');
+  if (!options || !options.name) throw new utils.PluginError('Modules error', 'Missing application name');
 
   return through.obj(function(file, enc, done) {
 
@@ -45,20 +40,22 @@ module.exports = function (options) {
 
       var arrayModules = modules[0].match(str);
 
-      arrayModules = arrayModules
-        .map(function (match) {
-          match = match.trim();
-          match = match.replace('\'', '');
-
-          return match;
-        })
-        .filter(function (match) {
-          return match !== "";
-        });
-
       if (arrayModules) {
-        list = arrayModules;
+        arrayModules = arrayModules
+          .map(function (match) {
+            match = match.trim();
+            match = match.replace('\'', '');
+
+            return match;
+          })
+          .filter(function (match) {
+            return match !== "";
+          });
+      } else {
+        arrayModules = [];
       }
+
+      list = arrayModules;
 
       var content   = utils.getContent(list, options);
       file.contents = new Buffer(content);
