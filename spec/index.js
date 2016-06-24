@@ -20,6 +20,25 @@ describe('gulp-ng-modules', function () {
     done();
   });
 
+  it('should emit PluginError on empty option name', function(done) {
+
+    var content = "(function () {\n";
+        content += "  " + "'use strict';\n\n";
+        content += "  " + "angular.module('test', ['ui.router', 'ngResource']);\n";
+        content += "})();";
+
+    try {
+      var stream = ngModule({});
+
+      stream.write(new File({contents: new Buffer(content)}));
+
+    } catch (err) {
+      assert(err instanceof PluginError);
+      assert.equal(err.message, 'Missing application name')
+      done();
+    }   
+  });
+
   it('should set application name as \'test\'', function (done) {
 
     var stream = ngModule({
