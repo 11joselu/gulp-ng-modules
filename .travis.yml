@@ -8,4 +8,5 @@ cache:
 before_script:
   - 'npm i' # install npm packages
 after_script:
-  - 'npm test' # run tests
+  - 'npm run travis'
+  - 'cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
