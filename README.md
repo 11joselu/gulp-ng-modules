@@ -1,6 +1,7 @@
 # Gulp Angular Module injection
 [![NPM version](https://badge.fury.io/js/gulp-ng-modules.svg)](https://npmjs.org/package/gulp-ng-modules)
 [![Build Status](https://travis-ci.org/11joselu/gulp-ng-modules.svg?branch=master)](https://travis-ci.org/11joselu/gulp-ng-modules/)
+[![Coverage Status](https://coveralls.io/repos/github/11joselu/gulp-ng-modules/badge.svg?branch=master)](https://coveralls.io/github/11joselu/gulp-ng-modules?branch=master)
 > Angular.js module dependency injection.
 
 ### How it works?
