@@ -60,7 +60,7 @@ gulp.task('inject:modules', function() {
 
 Type: `string` `required`
 
-The name of the module to create or retrieve.
+The name of the module to create.
 
 ##### modules
 
