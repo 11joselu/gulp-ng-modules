@@ -1,0 +1,1 @@
+angular.module('myGlobalApp', ['my.module', 'will.remove']);
