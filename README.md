@@ -11,7 +11,7 @@ It inject into a main module file that requires all your modules as a dependency
 - Adding a new module
 - Removing a module
 - 3rd party modules
-- Supports data entry:
+- Data entry:
     - example-1.js
     ```javascript
         angular.module('myGlobalApp', []);
