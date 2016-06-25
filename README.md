@@ -1,4 +1,5 @@
 # Gulp Angular Module injection
+[![NPM version](https://badge.fury.io/js/gulp-ng-modules.svg)](https://npmjs.org/package/gulp-ng-modules)
 [![Build Status](https://travis-ci.org/11joselu/gulp-ng-modules.svg?branch=master)](https://travis-ci.org/11joselu/gulp-ng-modules/)
 > Angular.js module dependency injection.
 
@@ -34,6 +35,9 @@ It inject into a main module file that requires all your modules as a dependency
         })()
     ```
 
+## How to install
+
+```npm install gulp-ng-modules --save-dev```
 
 ## Usage
 ```javascript
