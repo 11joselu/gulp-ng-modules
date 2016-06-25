@@ -1,4 +1,5 @@
 # Gulp Angular Module injection
+[![Build Status](https://travis-ci.org/11joselu/gulp-ng-modules.svg?branch=master)](https://travis-ci.org/11joselu/gulp-ng-modules/)
 > Angular.js module dependency injection.
 
 ### How it works?
