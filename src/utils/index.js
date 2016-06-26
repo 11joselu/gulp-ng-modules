@@ -31,6 +31,7 @@ var removeFromArray = function removeFromArray(arr, item) {
 
 var joinContent = function joinContent(unique) {
   if (unique.length > 0) {
+    
     return "[" + "'"+ unique.join("', '") +"']";
   }
 
@@ -60,15 +61,22 @@ var getContent = function getContent(list, options) {
   var unique = list.filter(getUnique);
 
   if (options.filter) {
+    
     if (isArray(options.filter)) {
       options.filter.forEach( function(item) {
         removeFromArray(unique, item);
       });
+    
     } else {
       throw new PluginError('Bad input', 'Filter must be an Array of strings')
     }
+
   }
 
+  if (options.transform && typeof options.transform === 'function') {
+    
+    return options.transform(unique, options);
+  }
   
   return content(options, unique);
 }

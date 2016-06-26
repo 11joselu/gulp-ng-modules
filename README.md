@@ -74,6 +74,12 @@ Type: `array` `optional`
 
 List of additional modules to exclude.
 
+##### transform
+
+Type: `function` `optional`
+
+Create a custom output file
+
 ## Example
 
 Check out the example directory: [gulpfile.js](example/gulpfile.js)

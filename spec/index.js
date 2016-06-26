@@ -148,5 +148,48 @@ describe('gulp-ng-modules', function () {
 
   });
 
+  it('should create default output on bad transform data entry', function(done) {
+    var content = "(function () {\n";
+        content += "  " + "'use strict';\n\n";
+        content += "  " + "angular.module('test', ['ui.router']);\n";
+        content += "})();";
+
+    var stream = ngModule({
+      name: 'test',
+      modules: ['ui.router', 'will.remove'],
+      filter: ['will.remove'],
+      transform: ''
+    });
+
+    stream.on("data", function(data) {
+      assert.equal(data.contents.toString(), content);
+      done();
+    });
+
+    stream.write(new File({contents: new Buffer(content)}));
+  });
+
+  it('should create custom output', function(done) {
+
+    var custom = "angular.module('test', ['ui.router'])";
+    var stream = ngModule({
+      name: 'test',
+      modules: ['ui.router', 'will.remove'],
+      filter: ['will.remove'],
+      transform: function(list, opt) {
+
+        return "angular.module('"+ opt.name +"', ['"+ list.join('\',\'') +"'])";
+      }
+    });
+
+    stream.on("data", function(data) {
+      assert.equal(data.contents.toString(), custom);
+      done();
+    });
+
+    stream.write(new File({contents: new Buffer(custom)}));
+
+  });
+
 
 });
