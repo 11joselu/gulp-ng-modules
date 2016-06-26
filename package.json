@@ -1,6 +1,6 @@
 {
   "name": "gulp-ng-modules",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "Will search for the angular.module definition and inject dependencies based on configuration",
   "main": "injex.js",
   "directories": {
