@@ -18,7 +18,7 @@ var isArray = function isArray(arr) {
 
 var isInArray = function isInArray(arr, item) {
 
-  return ~arr.indexOf(item) !== -1;
+  return ~arr.indexOf(item) !== 0;
 }
 
 var removeFromArray = function removeFromArray(arr, item) {
